@@ -38,7 +38,7 @@ Process CSS file and return the compiled file URL.
 	{# Or pass multiple parameters #}
 	{{ craft.csscrush.file({
 			'filename' 		: '/_assets/css/style.css',
-			'minify' 		: 'y',
+			'minify' 		: true,
 			'vars' 			: {	
 								'my_var1' : '#333',
 								'my_var2' : '20px'
@@ -59,7 +59,7 @@ Process CSS file and return an HTML link tag with populated href.
 	{# Or pass multiple parameters #}
 	{{ craft.csscrush.tag({
 			'filename' 		: '/_assets/css/style.css',
-			'minify' 		: 'y',
+			'minify' 		: true,
 			'vars' 			: {	
 								'my_var1' : '#333',
 								'my_var2' : '20px'
@@ -81,7 +81,7 @@ Process CSS file and return CSS as text wrapped in html style tags.
 
 	{{ craft.csscrush.inline({
 			'filename' 		: '/_assets/css/style.css',
-			'minify' 		: 'y',
+			'minify' 		: true,
 			'vars' 			: {	
 								'my_var1' : '#333',
 								'my_var2' : '20px'
@@ -100,6 +100,6 @@ Compile a raw string of CSS string and return it.
 
 	{{ craft.csscrush.inline({
 			'css' 		: '@set { color-brand: red; } .my-style { color: $(color-brand); }',
-			'minify' 	: 'y',
+			'minify' 	: true,
 		}) 
 	}}
