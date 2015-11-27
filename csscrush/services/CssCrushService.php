@@ -283,6 +283,7 @@ class CssCrushService extends BaseApplicationComponent
 			$public_vars = array_intersect_key($public_vars, array_flip($limit));
 		}
 
+		
 		// prep parameters
 		foreach ($params as $key => $var)
 		{
@@ -329,6 +330,12 @@ class CssCrushService extends BaseApplicationComponent
 					elseif( preg_match('/^\d+/', $var))
 					{
 						$value = (int) $var;
+					}
+
+					// default
+					else
+					{
+						$value = $var;
 					}
 				}
 
