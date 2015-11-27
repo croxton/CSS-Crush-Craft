@@ -18,11 +18,11 @@ This plugin is a wrapper for CSS Crush that allows you to use it in [Craft CMS](
 
 1. Copy the crush folder to `./craft/plugins/`
 2. Create a folder 'cache' somewhere in your public webroot and make it writable by PHP, e.g. `/assets/css/cache`
-3. Open your craft/config/general.php file, and add the webroot-relative path to your `environmentVariables` array:
+3. Open your craft/config/general.php file, and add `crushOutputDir` to your `environmentVariables` array:
 
-	'environmentVariables' => array(
-    	'crushOutputDir' => '/assets/css/cache'; //no trailing slash
-	),
+ 		'environmentVariables' => array(
+    		'crushOutputDir' => '/assets/css/cache'; // webroot-relative path, no trailing slash
+		),
 
 
 ## Usage:
