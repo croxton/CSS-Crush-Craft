@@ -43,11 +43,7 @@ Process CSS file and return the compiled file URL.
 								'my_var1' : '#333',
 								'my_var2' : '20px'
 							  
-							  },
-			'attributes' 	: {
-								'media' : 'print',
-								'title' : 'monkey'
-							  },
+							  }
 		}) 
 	}}
 
