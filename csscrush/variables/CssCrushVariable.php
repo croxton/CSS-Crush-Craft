@@ -30,14 +30,14 @@ class CssCrushVariable
 		{{ craft.csscrush.file({
 				'filename' 		: '/_assets/css/style.css',
 				'minify' 		: 'y',
-				'vars' 			: [	
+				'vars' 			: {	
 									'my_var1' : '#333',
 									'my_var2' : '20px'
-								  ],
-				'attributes' 	: [
+								  },
+				'attributes' 	: {
 									'media' : 'print',
 									'title' : 'monkey'
-								  ],
+								  },
 			}) 
 		}}
 		*/
@@ -67,14 +67,14 @@ class CssCrushVariable
 		{{ craft.csscrush.tag({
 				'filename' 		: '/_assets/css/style.css',
 				'minify' 		: 'y',
-				'vars' 			: [	
+				'vars' 			: {	
 									'my_var1' : '#333',
 									'my_var2' : '20px'
-								  ],
-				'attributes' 	: [
+								  },
+				'attributes' 	: {
 									'media' : 'print',
 									'title' : 'monkey'
-								  ],
+								  },
 			}) 
 		}}
 		*/
@@ -105,14 +105,14 @@ class CssCrushVariable
 		{{ craft.csscrush.inline({
 				'filename' 		: '/_assets/css/style.css',
 				'minify' 		: 'y',
-				'vars' 			: [	
+				'vars' 			: {	
 									'my_var1' : '#333',
 									'my_var2' : '20px'
-								  ],
-				'attributes' 	: [
+								  },
+				'attributes' 	: {
 									'media' : 'print',
 									'title' : 'monkey'
-								  ],
+								  },
 			}) 
 		}}
 		*/

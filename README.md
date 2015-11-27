@@ -39,14 +39,15 @@ Process CSS file and return the compiled file URL.
 	{{ craft.csscrush.file({
 			'filename' 		: '/_assets/css/style.css',
 			'minify' 		: 'y',
-			'vars' 			: [	
+			'vars' 			: {	
 								'my_var1' : '#333',
 								'my_var2' : '20px'
-							  ],
-			'attributes' 	: [
+							  
+							  },
+			'attributes' 	: {
 								'media' : 'print',
 								'title' : 'monkey'
-							  ],
+							  },
 		}) 
 	}}
 
@@ -59,14 +60,14 @@ Process CSS file and return an HTML link tag with populated href.
 	{{ craft.csscrush.tag({
 			'filename' 		: '/_assets/css/style.css',
 			'minify' 		: 'y',
-			'vars' 			: [	
+			'vars' 			: {	
 								'my_var1' : '#333',
 								'my_var2' : '20px'
-							  ],
-			'attributes' 	: [
+							  },
+			'attributes' 	: {
 								'media' : 'print',
 								'title' : 'monkey'
-							  ],
+							  },
 		}) 
 	}}
 
@@ -81,14 +82,14 @@ Process CSS file and return CSS as text wrapped in html style tags.
 	{{ craft.csscrush.inline({
 			'filename' 		: '/_assets/css/style.css',
 			'minify' 		: 'y',
-			'vars' 			: [	
+			'vars' 			: {	
 								'my_var1' : '#333',
 								'my_var2' : '20px'
-							  ],
-			'attributes' 	: [
+							  },
+			'attributes' 	: {
 								'media' : 'print',
 								'title' : 'monkey'
-							  ],
+							  },
 		}) 
 	}}
 

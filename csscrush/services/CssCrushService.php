@@ -291,42 +291,45 @@ class CssCrushService extends BaseApplicationComponent
 				// the final parameter value
 				$value = '';
 
-				// booleans
-				if ( preg_match('/^[1|on|yes|y|0|off|no|n]/i', $var))
+				if (is_string($var))
 				{
-					$value = (bool) preg_match('/1|on|yes|y/i', $var);
-				}
-
-				// stringified arrays
-				elseif ( preg_match('/\||=/', $var))
-				{
-					// indexed array
-					$value = explode('|', $var);
-
-					// remove whitepace from array values
-					$value = array_filter(array_map('trim', $value));
-
-					// associative arrays
-					if ( preg_match('/=/', $var))
+					// booleans
+					if ( preg_match('/^[1|on|yes|y|0|off|no|n]/i', $var))
 					{
-						$param = array();
-
-						foreach ($value as $v)
-						{
-							$nested = explode('=', $v);
-							if (isset($nested[1]))
-							{
-								$param[trim($nested[0])] = trim($nested[1]);
-							}
-						}
-						$value = $param;
+						$value = (bool) preg_match('/1|on|yes|y/i', $var);
 					}
-				}
 
-				// integers
-				elseif( preg_match('/^\d+/', $var))
-				{
-					$value = (int) $var;
+					// stringified arrays
+					elseif ( preg_match('/\||=/', $var))
+					{
+						// indexed array
+						$value = explode('|', $var);
+
+						// remove whitepace from array values
+						$value = array_filter(array_map('trim', $value));
+
+						// associative arrays
+						if ( preg_match('/=/', $var))
+						{
+							$param = array();
+
+							foreach ($value as $v)
+							{
+								$nested = explode('=', $v);
+								if (isset($nested[1]))
+								{
+									$param[trim($nested[0])] = trim($nested[1]);
+								}
+							}
+							$value = $param;
+						}
+					}
+
+					// integers
+					elseif( preg_match('/^\d+/', $var))
+					{
+						$value = (int) $var;
+					}
 				}
 
 				// default
